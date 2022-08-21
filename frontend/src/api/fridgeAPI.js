@@ -24,4 +24,8 @@ fridgeAPI.foodByID = async (foodId) => {
   return await tryCatchFetch(() => axios.get(`${BASE_URL}foods/${foodId}/`));
 };
 
+fridgeAPI.addFood = async (foodData) => {
+  return await tryCatchFetch(() => axios.post(`${BASE_URL}foods/`, foodData));
+};
+
 export default fridgeAPI;

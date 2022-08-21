@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import App from "./App";
 import Foods from "./routes/foods";
 import Food from "./routes/food";
+import AddFood from "./routes/AddFood";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -19,6 +20,7 @@ root.render(
             }
           />
           <Route path=":id" element={<Food />} />
+          <Route path="add" element={<AddFood />} />
         </Route>
         <Route
           path="*"

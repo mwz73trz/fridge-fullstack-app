@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import AllFoods from "../components/AllFoods";
 import fridgeAPI from "../api/fridgeAPI";
 
@@ -17,7 +17,7 @@ export default function Foods(props) {
 
   const renderAllFoods = () => {
     return foods.map((food, index) => {
-      return <AllFoods food={food} />;
+      return <AllFoods key={index} food={food} />;
     });
   };
   return (
@@ -29,6 +29,7 @@ export default function Foods(props) {
         }}
       >
         {renderAllFoods()}
+        <Link to="add">Add Food</Link>
       </nav>
       <Outlet />
     </div>
